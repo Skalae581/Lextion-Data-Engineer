@@ -1,0 +1,13 @@
+Voraussetzung für die Umsetzung ins relationen Modell:
+.) ER-Diagramm (PK, Attribute)
+.) Auflösung der zusammengesetzten Attribute in Einzelattribute ist bekannt
+.) Funktionalität
+
+
+1. zusammengesetze Attribute aufteilen und Datentypen ergänzen ---> CHARAKTERISTIKA DER ENTITÄTEN MIT SEINEN ATTRIBUTEN
+
+2. Defintition des Relationenmodelles
+     a. Relationen us en Entitäten
+     b. Relationen aus den Beziehungen (basierend auf den Funktionalitäten ist "neue" PK zu definieren)
+     c. Relationen zusammenfassen/verfeinern
+     d. Relationen fuer die Sonderformen 
