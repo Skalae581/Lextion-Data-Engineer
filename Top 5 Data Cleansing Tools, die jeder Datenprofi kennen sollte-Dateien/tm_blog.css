@@ -1,0 +1,137 @@
+.blog-posts h2{
+font-family: Manrope;
+font-size: 40px;
+font-weight: 600;
+line-height: 60px;
+text-align: center;
+margin:0;
+color: #0E0E0E;
+
+}
+.blog-viewall{
+font-family: Manrope;
+font-size: 20px;
+font-weight: 500;
+line-height: 30px;
+text-align: right;
+color:#000 !important;
+padding:30px 40px;
+display:block;
+position:relative;
+}
+.blog-viewall:after{
+content:"";
+position:absolute;
+top:43%;
+right:0;
+background:url(../img/arrow.svg);
+height:13px;
+width:14px;
+background-size:contain;
+display:block;
+    background-repeat: no-repeat;
+}
+.tm_blog_container {
+    display: flex;
+    gap:25px;
+    
+    .featured-image a:before{
+    display:none;
+    }
+    article{
+    border: 1px solid #DBDDDF;
+    border-radius:8px;
+    padding-bottom:30px;
+    }
+    .featured-image img{
+        min-width: 100%;
+        max-height: 250px;
+        object-fit: contain;
+    }
+    .featured-image {
+    	padding-bottom: 50px;
+	}
+    .post-categories{
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.07em;
+        text-transform:capitalize;
+        border: 1px solid #C6D4E2;
+        border-radius: 1000px;
+        padding: 2px 16px;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+     .post-categories a{
+     	color: #0E0E0E !important; 
+     }
+    .entry-meta span{
+        font-family: Manrope;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        color: #0E0E0EA3;
+        padding-bottom:24px;
+        display:block;
+    }
+    .blog-title a{
+    	font-family: Manrope;
+        font-size: 26px;
+        font-weight: 600;
+        color: #101111 !important;
+        text-align:left;
+        text-transform: capitalize;
+        padding-top: 24px;
+        line-height: 35px;
+        margin-bottom: 32px;
+        display: -webkit-box;          /* Use flexbox */
+        -webkit-box-orient: vertical; /* Set the orientation */
+        -webkit-line-clamp: 2;        /* Limit to 2 lines */
+        overflow: hidden;              /* Hide overflow */
+        text-overflow: ellipsis;      /* Add ellipsis */
+    }
+    .entry-content{
+    	font-family: Manrope;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: left;
+        color: #353535;
+        padding:0 30px 32px 30px;
+        display: -webkit-box;          /* Use flexbox */
+        -webkit-box-orient: vertical; /* Set the orientation */
+        -webkit-line-clamp: 3;        /* Limit to 2 lines */
+        overflow: hidden;              /* Hide overflow */
+        text-overflow: ellipsis;      /* Add ellipsis */
+    }
+    .read-more{
+    font-family: Manrope;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    color: #2E59F6 !important;
+    position:relative;
+    margin-left:30px;
+    }
+    .read-more:before{
+    content:"" !important;
+    background:url(../../syncaroo/images/readmore.svg)no-repeat !important;
+        position: absolute !important;
+        top: 6px;
+        left: 96px !important;
+        height: 20px !important;
+        width: 100% !important;
+        transform: none !important;
+    }
+    .post-meta, .blog-title{    
+    padding: 0 30px;
+    }
+    .tm_blog_posts {
+    flex-basis: 33%;
+}
+.
+    
+}

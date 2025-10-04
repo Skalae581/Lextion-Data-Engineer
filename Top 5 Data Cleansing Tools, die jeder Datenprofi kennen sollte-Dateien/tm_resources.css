@@ -1,0 +1,193 @@
+.resources {
+  padding-top: 100px;
+}
+body .tm_resources .resources__list .resources__list-outer {
+  margin: 0;
+}
+body .tm_resources .resources__list .resources__list-inner {
+  gap: 27px;
+}
+body .tm_resources .resources__list .resource {
+  width: 31%;
+}
+body .tm_resources .view-all a {
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  color: #2e59f6 !important;
+  background: #cde1ff;
+  margin: auto;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 8px;
+  text-transform: capitalize;
+  min-width: 152px;
+}
+body .tm_resources .view-all {
+  text-align: center;
+}
+body .tm_resources .resources__title {
+  font-family: Manrope;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  color: #0e0e0e !important;
+}
+body .tm_resources .resources__intro {
+  margin-bottom: 0;
+}
+body .tm_resources .resources__list {
+  margin: 0;
+}
+body .tm_resources .resources__list-inner .resource:first-child {
+  width: 100%;
+}
+body
+  .tm_resources
+  .resources__list-inner
+  .resource:first-child
+  .resource__container {
+  display: flex;
+  align-items: center;
+  gap: 62px;
+  min-height: 429px;
+}
+body
+  .tm_resources
+  .resources__list-inner
+  .resource:first-child
+  .resource__content {
+  flex-basis: 100%;
+  padding-right: 84px;
+}
+body .tm_resources .resource .resource__image {
+  background-size: contain;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+body .tm_resources .resource__container {
+  border: 1px solid #dbe1e8;
+  border-radius: 8px;
+}
+body
+  .tm_resources
+  .resources__list-inner
+  .resource:first-child
+  .resource__image {
+  padding-bottom: 25%;
+}
+body .tm_resources .resource:hover .resource__image {
+  transform: none;
+}
+body .tm_resources .resources__container {
+  padding: 40px 30px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+body .tm_resources .resource {
+  padding: 0;
+}
+body .tm_resources .resource__excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #353535;
+}
+body .tm_resources .resource__date {
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #0e0e0ea3;
+  margin: 0;
+  padding-bottom: 24px;
+}
+body .tm_resources .resource .resource__content .resource__kicker {
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  border: 1px solid #c6d4e2;
+  padding: 6px 12px;
+  color: #0e0e0e;
+  display: inline;
+  gap: 8px;
+  border-radius: 1000px;
+  margin-bottom: 24px;
+}
+body .tm_resources .resource .resource__content .resource__title {
+  font-family: Manrope;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32.5px;
+  color: #101111;
+  margin: 0;
+  padding-top: 24px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body
+  .tm_resources
+  .resources__list-inner
+  .resource:first-child
+  .resource__read-more {
+  border: 1px solid #cde1ff;
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  background: #cde1ff;
+  color: #2e59f6;
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+body
+  .tm_resources
+  .resources__list-inner
+  .resource:first-child
+  .resource__read-more:before {
+  display: none;
+}
+body .tm_resources .resource .resource__image {
+  width: 100%;
+  min-height: 223px;
+}
+body .tm_resources .resource__read-more {
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  text-align: left;
+  color: #2e59f6 !important;
+  position: relative;
+  background-color: transparent;
+  outline: 0;
+  border-color: transparent;
+  padding: 0 0 60px 0;
+}
+body .tm_resources .resource__read-more:before {
+  content: "" !important;
+  background: url(../../syncaroo/images/readmore.svg) no-repeat !important;
+  position: absolute !important;
+  top: 7px;
+  left: 100px !important;
+  height: 20px !important;
+  width: 100% !important;
+  transform: none !important;
+}

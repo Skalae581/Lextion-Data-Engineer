@@ -1,0 +1,11 @@
+technische Felder
+
+IsActive bit-flag 0/1
+
+ValidFrom datetime NOT  NULL ValidTo datetime NULL
+
+CreateDate datetim getdate() getutcdate()
+CreateUser varchar() SYSTEM_USER
+
+ModifyDate  datetim getdate() getutcdate(
+ModifyUser varchar() SYSTEM_USER

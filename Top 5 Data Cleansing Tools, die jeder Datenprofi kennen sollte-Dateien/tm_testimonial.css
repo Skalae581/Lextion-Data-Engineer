@@ -1,0 +1,110 @@
+.tm-carousel-container{
+	.main-title
+    {
+        font-family: Manrope;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 60px;
+        text-align: center;
+        color: #0E0E0E;
+        padding-bottom:60px;
+        text-transform:capitalize;
+    }
+    .slide-title{
+    font-family: Manrope;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 22px;
+    padding-bottom:40px;
+        position: relative;
+    }
+    .slide-title:before{
+    content:"";
+    background:url(https://syncaristage.wpengine.com/wp-content/uploads/2024/10/Vector.png)no-repeat;
+        height: 54px;
+        display: block;
+        position: absolute;
+        width: 67px;
+        left: -100px;
+        top: 0px;
+    
+    }
+    .title_in_black{
+    color: #353535;
+    }
+    .title_in_blue{
+    color: #2E59F6;
+    }
+    .slide-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height:400px;
+	}
+    .slide-text {
+    flex-basis: 53%;
+    padding-left:100px;
+	}
+    .content p{
+    font-family: Manrope;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    margin:0;
+    padding-bottom:50px;
+    }
+    .designation-name{
+    font-family: Manrope;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    }
+    .customer-logo{
+    font-family: Manrope;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    }
+    /* Hide the default dots */
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        width: 54%;
+        bottom: 62px;
+    }
+
+    .slick-dots li {
+        margin: 0; /* Space between lines */
+        flex: 1; /* Allow items to take equal space */
+                pointer-events: none;
+    }
+
+    .slick-dots li button {
+        display: none; /* Hide the button (default dot) */
+    }
+
+    /* Create line structures */
+    .slick-dots li::before {
+        content: '';
+        display: block;
+        width: 100%; /* Line takes full width of the container */
+        height: 5px; /* Thickness of the line */
+        background-color: #EEEEEE; /* Line color */
+        border-radius: 3px; /* Rounded edges */
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+    /* Change line color when active */
+    .slick-dots li.slick-active::before {
+        background-color: #2E59F6; /* Active line color */
+    }
+    .thumbnails {
+    touch-action: none; /* Prevent touch interactions */
+    -webkit-user-select: none; /* Prevent text selection in iOS Safari */
+    -webkit-overflow-scrolling: auto; /* Stop momentum scrolling in iOS */
+}
+
+
+}

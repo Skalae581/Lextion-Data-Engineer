@@ -1,0 +1,9 @@
+.) Starschema aus logischem Schema erstellen / vergleichen (a)
+.) Snowflakeschema für alle Dimensionen (b nur Zeitdimension)
+.) DDL-Befehle für Starschema ausführen - (4 Dim und 1 FAKT) - (neue DB und schema DWH1)
+.) Daten eingeben (pro dimension 5 DS), FAKT 10 DS 
+.) DDL-Befehle für Snowflakeschema ausführen (neue DB und schema DWH2)
+.) (c) kurz zusammenfassen
+.) SQL komplettieren / weiterarbeiten
+
+pro Gruppe hochladen (DDL, DML-Befehle und die Zusammenfassung

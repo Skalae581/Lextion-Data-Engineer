@@ -1,0 +1,111 @@
+footer {
+  background-color: #02031d !important;
+  background-image: none !important;
+  padding: 0;
+}
+footer .footer__copyright {
+  background: #1c1e35;
+  justify-content: center;
+  padding: 18px 0 10px 0;
+}
+footer .hs_error_rollup {
+  position: absolute;
+  color: red;
+  bottom: -43px;
+  left: 5%;
+}
+footer .footer__copyright div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 1440px;
+  padding: 0 30px;
+}
+footer .footer__copyright ul {
+  justify-content: space-around;
+  width: 100%;
+}
+footer .footer__copyright p {
+  margin-right: 0;
+  width: 30%;
+}
+footer .footer__nav {
+  border-top: 0 !important;
+  z-index: 2;
+  padding-top: 60px;
+}
+footer .footer__nav a:before {
+  display: none;
+}
+footer .footer__nav .footer__meta p {
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+}
+footer .footer__nav .footer__social {
+  display: flex;
+}
+footer .footer__nav div h4 {
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #fff;
+  margin-top: 0;
+}
+footer .footer__nav div ul li > a {
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500 !important;
+  line-height: 17px !important;
+  padding: 5px;
+  color: #fff !important;
+}
+.footer__brands {
+  padding-top: 50px;
+}
+.footer__brands .newsletter {
+  max-width: 100%;
+  width: 100%;
+  justify-content: center;
+  padding: 68px 0;
+  background-color: #1c1e35;
+  border-radius: 16px;
+}
+.footer__brands .newsletter__title {
+  max-width: 100%;
+  font-family: Manrope;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+footer:before {
+  content: "";
+  background: url(../images/footerbg.png);
+  height: 55%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+body .footer__container {
+  padding: 0 30px;
+}
+body footer {
+  padding-right: 0;
+  padding-left: 0;
+  z-index: 1;
+}
+body footer .footer__copyright ul li > a,
+body footer .footer__copyright p {
+  color: #fff !important;
+  font-size: 16px;
+}

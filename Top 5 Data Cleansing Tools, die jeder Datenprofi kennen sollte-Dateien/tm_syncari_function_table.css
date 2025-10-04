@@ -1,0 +1,66 @@
+.syncari_function_table .main_title {
+  font-family: Manrope;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+  padding-bottom: 64px;
+}
+.syncari_function_table .syncari_function_label {
+  padding: 16px 20px 16px 20px;
+  border-radius: 45px;
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline;
+}
+.syncari_function_table .function_title {
+  font-family: Manrope;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 58px;
+  color: #000000;
+  padding: 32px 0;
+}
+.syncari_function_table .function_desc {
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #555555;
+  padding-bottom: 0px;
+}
+.syncari_function_table .function_subtitle {
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  color: #353535;
+  padding-bottom: 0px;
+}
+.syncari_function_table .function_points {
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #555555;
+  padding-bottom: 25px;
+  display: block;
+}
+.syncari_function_table .tm_function_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.syncari_function_table .tm_function_container-box {
+  flex-basis: 40%;
+}
+.syncari_function_table .function_point_box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}

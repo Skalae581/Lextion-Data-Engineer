@@ -1,0 +1,1 @@
+jQuery(document).ready(function(i){function n(){if(i(window).width()<=991){if(!i(".tm_blog_container").hasClass("slick-initialized")){i(".tm_blog_container").slick({slidesToShow:1.1,slidesToScroll:1,dots:true,arrows:true})}}else{if(i(".tm_blog_container").hasClass("slick-initialized")){i(".tm_blog_container").slick("unslick")}}}n();i(window).resize(function(){n()})});

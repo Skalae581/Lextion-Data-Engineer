@@ -1,0 +1,62 @@
+.syncari_feature_table_container .syncari_feature_table_mainTitle {
+  font-family: Manrope;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  max-width: 450px;
+  color: #0e0e0e;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 64px;
+  text-transform: capitalize;
+}
+.syncari_feature_table_container .syncari_feature_table_contentTitle {
+  font-family: Manrope;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 54px;
+  text-align: center;
+  color: #ffffff;
+  min-height: 165px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  background-position: right;
+}
+.syncari_feature_table_container .tm_feature_content_list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+}
+.syncari_feature_table_container .itemcontainer {
+  max-width: 31%;
+  border: 1px solid #dbe1e8;
+}
+.syncari_feature_table_container .item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 40px;
+}
+.syncari_feature_table_container .syncari_feature_table_item_title {
+  font-family: Manrope;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: left;
+  padding-bottom: 24px;
+  margin: 0;
+  color: #0e0e0e;
+}
+.syncari_feature_table_container .syncari_feature_table_item_desc {
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  margin: 0;
+  color: #353535;
+}

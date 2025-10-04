@@ -1,0 +1,9 @@
+1. Entitäten (Name)
+2. Beziehungen (Name)
+3. Sonderformen definieren zB Generalisierung
+4. Attribute der Entitäten festzulegen
+5. Schlüssel der Entität zu definieren
+6. Attribute der Sonderformen
+7. Schüssel der Sonderformen
+8. etwaige Attribute an den Beziehungen zu definieren
+9. Funktionalitäten zu definieren (1:1, 1:N, N:1, N:M)

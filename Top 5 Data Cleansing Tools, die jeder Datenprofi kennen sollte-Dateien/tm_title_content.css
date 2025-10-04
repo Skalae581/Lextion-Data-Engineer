@@ -1,0 +1,58 @@
+.tm_title_content_container {
+;
+.tm_title_content_list{
+    background: url(../assets/img/oursuccess.png);
+    max-width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 350px;    
+}
+.main_title{
+    font-family: Manrope;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+    color: #0E0E0E;
+    text-transform:capitalize;
+}
+.item {
+    list-style-type: none;
+    font-family: Manrope;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 96px;
+    text-align: center;
+    color:#fff;
+}
+    ul {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        justify-content: space-evenly;
+        min-height: 350px;
+        align-items: center;
+    }
+.tm_title_content_item_title{
+    font-family: Manrope;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 64px;
+    text-align: center;
+    text-transform:uppercase;
+    color:#fff;
+    padding-bottom:32px;
+    margin:0;
+}
+.tm_title_content_item_subtext{
+    font-family: Manrope;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: center;
+    color:#fff;
+    text-transform:capitalize;
+	margin:0;
+}
