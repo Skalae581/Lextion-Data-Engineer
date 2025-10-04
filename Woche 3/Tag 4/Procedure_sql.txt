@@ -1,0 +1,197 @@
+CREATE TABLE dwh.dim_kunde (
+    kunde_id SERIAL PRIMARY KEY,
+    city TEXT,
+    region_postalcode TEXT,
+    country TEXT
+);
+
+
+
+INSERT INTO dwh.dim_kunde (city, region_postalcode, country)
+SELECT 
+    c.city,
+    COALESCE(c.region, '') || '_' || c.postal_code AS region_postalcode,
+    c.country
+FROM 
+   public.customers c
+WHERE 
+    c.city IS NOT NULL AND TRIM(c.city) <> ''
+GROUP BY 
+    c.city, c.region, c.postal_code, c.country;
+
+
+
+CREATE TABLE dwh.dim_produkt (
+    product_id INT PRIMARY KEY,
+    product_name TEXT,
+    supplier_id INT,
+    supplier_name TEXT,
+    category_id INT,
+    category_name TEXT,
+    quantity_per_unit TEXT,
+    unit_price NUMERIC(10,2),
+    units_in_stock INT,
+    units_on_order INT,
+    reorder_level INT,
+    discontinued BOOLEAN
+);
+
+-- 1. Tabelle löschen, falls sie existiert
+DROP TABLE IF EXISTS dwh_northwind_b.artikel;
+
+-- 2. Tabelle neu erstellen (analog zum INTO)
+CREATE TABLE dim_artikel (
+    artikelgruppe TEXT,
+    artikelobergruppe TEXT
+);
+
+-- 3. Tabelle mit Daten befüllen
+INSERT INTO dim_artikel (artikelgruppe, artikelobergruppe)
+SELECT DISTINCT
+    COALESCE(TRIM(SUBSTRING(c.category_name FROM 1 FOR 25)), 'N/A') AS artikelgruppe,
+    COALESCE(TRIM(SUBSTRING(s.company_name FROM 1 FOR 40)), 'N/A') AS artikelobergruppe
+FROM 
+    public.products p
+JOIN 
+    public.categories c ON p.category_id = c.category_id
+JOIN 
+    public.suppliers s ON p.supplier_id = s.supplier_id;
+
+
+DROP TABLE IF EXISTS dim_kassa;
+
+CREATE TABLE dim_kassa (
+    kassa BIGINT PRIMARY KEY NOT NULL,
+    filiale VARCHAR(100) NOT NULL,
+    filialbezirk VARCHAR(100) NOT NULL,
+    filialoberbezirk VARCHAR(100) NOT NULL,
+    filiallandkreis VARCHAR(100) NOT NULL,
+    filialbundesland VARCHAR(100) NOT NULL,
+    filialstaat VARCHAR(100) NOT NULL
+);
+
+-- Daten übertragen
+INSERT INTO dim_kassa (
+    kassa,
+    filiale,
+    filialbezirk,
+    filialoberbezirk,
+    filiallandkreis,
+    filialbundesland,
+    filialstaat
+)
+SELECT 
+    kassa,
+    filiale,
+    filialbezirk,
+    filialoberbezirk,
+    filiallandkreis,
+    filialbundesland,
+    filialstaat
+FROM public.kassa;
+
+-- Kontrolle
+SELECT * FROM dim_kassa;
+
+
+DROP TABLE IF EXISTS dim_zeit;
+
+CREATE TABLE dim_zeit (
+    tag VARCHAR(8) PRIMARY KEY, -- Format 'YYYYMMDD'
+    woche INT,
+    monat INT,
+    year INT
+);
+
+CREATE OR REPLACE FUNCTION dim_fill_zeit(p_year INT)
+RETURNS VOID AS $$
+DECLARE
+    start_date DATE := make_date(p_year, 1, 1);
+    end_date DATE := make_date(p_year, 12, 31);
+BEGIN
+    WHILE start_date <= end_date LOOP
+        INSERT INTO dim_zeit (tag, woche, monat, year)
+        VALUES (
+            to_char(start_date, 'YYYYMMDD'),
+            EXTRACT(WEEK FROM start_date),
+            EXTRACT(MONTH FROM start_date),
+            EXTRACT(YEAR FROM start_date)
+        );
+
+        start_date := start_date + INTERVAL '1 day';
+    END LOOP;
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT dim_fill_zeit(2015);
+SELECT dim_fill_zeit(2016);
+SELECT dim_fill_zeit(2027);
+SELECT * FROM dim_zeit;
+
+--dim_Fakt  
+-- Spalte hinzufügen mit Default -1
+ALTER TABLE public.orders
+ADD COLUMN kassa BIGINT DEFAULT -1;
+
+-- Bestehende Werte auf -1 setzen (zur Sicherheit)
+UPDATE public.orders SET kassa = -1;
+
+-- Fremdschlüsselbeziehung zur Tabelle kassa
+ALTER TABLE public.orders
+ADD CONSTRAINT fk_orders_kassa
+FOREIGN KEY (kassa) REFERENCES northwnd.kassa(kassa);
+
+DROP VIEW IF EXISTS public.vf_einkaeufe;
+
+CREATE VIEW public.vf_einkaeufe AS
+SELECT 
+    cu.city,
+    CONCAT(cu.region, '_', cu.postal_code) AS region,
+    COALESCE(TRIM(SUBSTRING(c.category_name FROM 1 FOR 25)), 'N/A') AS artikelgruppe,
+    COALESCE(TRIM(SUBSTRING(s.company_name FROM 1 FOR 40)), 'N/A') AS artikelobergruppe,
+    TO_CHAR(o.order_date, 'YYYYMMDD') AS timeid,
+    o.kassa,
+    MIN(od.unit_price) AS verkaufspreis,
+    SUM(od.quantity) AS menge
+FROM 
+    public.orders o
+JOIN 
+    public.order_details od ON o.order_id = od.order_id
+JOIN 
+    public.customers cu ON o.customer_id = cu.customer_id
+JOIN 
+    public.products p ON p.product_id = od.product_id
+JOIN 
+    public.categories c ON p.category_id = c.category_id
+JOIN 
+    public.suppliers s ON p.supplier_id = s.supplier_id
+GROUP BY 
+    cu.city,
+    CONCAT(cu.region, '_', cu.postal_code),
+    COALESCE(TRIM(SUBSTRING(c.category_name FROM 1 FOR 25)), 'N/A'),
+    COALESCE(TRIM(SUBSTRING(s.company_name FROM 1 FOR 40)), 'N/A'),
+    TO_CHAR(o.order_date, 'YYYYMMDD'),
+    o.kassa;
+
+SELECT 
+    (
+        SELECT kunde
+        FROM dim_kunden dwh
+        WHERE 
+            dwh.wohnortdeskunden = s.city
+            AND dwh.landkreisdeskunden = s.region
+    ) AS kunde,
+    
+    (
+        SELECT artikel
+        FROM dwh1.dim_artikel dwh
+        WHERE 
+            dwh.artikelgruppe = s.artikelgruppe
+            AND dwh.artikelobergruppe = s.artikelobergruppe
+    ) AS artikel,
+
+    timeid,
+    menge,
+    verkaufspreis
+FROM public.vf_einkaeufe s;
+
