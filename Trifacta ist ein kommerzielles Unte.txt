@@ -1,0 +1,7 @@
+Trifacta ist ein kommerzielles Unternehmen des Stanford Data Wrangler-Projekts, das Benutzern leistungsstarke Datenreinigungs- und Transformationsoptionen bietet. Das Datenreinigungstool soll vor allem auf die Analyse für eine schnellere Formatierungszeit ausgerichtet sein.
+
+Wie Syncari setzt Trifacta auf leistungsstarke künstliche Intelligenz und Algorithmen des maschinellen Lernens, um Datentransformationen vorzuschlagen, indem es Inkonsistenzen in der Datenquelle erkennt.
+
+Datenanalysten können visualisierende Darstellungen ihrer Daten über diese Funktionen standardisieren und erhalten. Die GUI von Trifacta führt die Benutzer durch den Datenreinigungsprozess und kann Ungereimtheiten und Formatierungsfehler aufzeigen.
+
+Trifacta Wrangler Pro unterstützt größere Datensätze und Cloud-Speicher, während das Enterprise-Paket zentrale Sicherheit bietet, um sensible Daten sicher zu speichern.
